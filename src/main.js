@@ -15,7 +15,12 @@ if (!customElements.get("link-button")) {
 
             if (popover) {
               e.preventDefault();
-              popover.togglePopover();
+              console.log("open", popover.matches(":popover-open, [open]"));
+              if (popover.matches(":popover-open")) {
+                popover.hidePopover();
+              } else {
+                popover.showPopover();
+              }
             }
           }
         });
